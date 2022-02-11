@@ -2,26 +2,27 @@ using UnityEngine;
 
 public class StickRotate : MonoBehaviour
 {
-    [SerializeField] StickPosition _stickPosition;
+    [SerializeField] private StickControl _stickControl;
     private bool _isDown = false;
+    private float _speed = -200f;
 
     private void OnEnable()
     {
-        _stickPosition.TurnedAround += Enable;
-        _stickPosition.Returned += Disable;
+        _stickControl.TurnedAround += Enable;
+        _stickControl.Returned += Disable;
     }
 
     private void OnDisable()
     {
-        _stickPosition.TurnedAround -= Enable;
-        _stickPosition.Returned -= Disable;
+        _stickControl.TurnedAround -= Enable;
+        _stickControl.Returned -= Disable;
     }
 
     private void Update()
     {
         if (_isDown == true)
         {
-            transform.Rotate(0, 0, -200f * Time.deltaTime);
+            transform.Rotate(0, 0, _speed * Time.deltaTime);
         }
     }
 

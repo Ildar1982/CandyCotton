@@ -35,11 +35,7 @@ public class TemplateBasicCotton : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.TryGetComponent<CottonBlockDisgusting>(out CottonBlockDisgusting cottonBlockDisgusting))
-        {
-            WrapCotton();
-        }
-        if (collision.gameObject.TryGetComponent<CottonBlockPleasant>(out CottonBlockPleasant cottonBlockPleasant))
+        if (collision.gameObject.TryGetComponent<CottonBlock>(out CottonBlock cottonBlock))
         {
             WrapCotton();
         }
@@ -47,11 +43,7 @@ public class TemplateBasicCotton : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.TryGetComponent<CottonBlockDisgusting>(out CottonBlockDisgusting cottonBlockDisgusting))
-        {
-            _animator.enabled = false;
-        }
-        if (collision.gameObject.TryGetComponent<CottonBlockPleasant>(out CottonBlockPleasant cottonBlockPleasant))
+        if (collision.gameObject.TryGetComponent<CottonBlock>(out CottonBlock cottonBlock))
         {
             _animator.enabled = false;
         }

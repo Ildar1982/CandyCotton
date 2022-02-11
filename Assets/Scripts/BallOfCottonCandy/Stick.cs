@@ -37,11 +37,11 @@ public class Stick : MonoBehaviour
     private GameObject FindChild(GameObject parent, string name)
     {
         Transform[] children = parent.GetComponentsInChildren<Transform>();
-        foreach (Transform t in children)
+        foreach (Transform bone in children)
         {
-            if (t.gameObject.name == name)
+            if (bone.gameObject.name == name)
             {
-                return t.gameObject;
+                return bone.gameObject;
             }
         }
         return null;

@@ -5,20 +5,20 @@ public class CottonDeformation : MonoBehaviour
 {
     [SerializeField] private ImpactDeformable[] _deformationObjects;
     [SerializeField] private float _degreeOfDeformation;
-    [SerializeField] private StickPosition _takingCottonCandy;
+    [SerializeField] private StickControl _stickControl;
 
     private bool _isDeformed = false;
 
     private void OnEnable()
     {
-        _takingCottonCandy.TurnedAround += AllowDeformation;
-        _takingCottonCandy.Returned += ProhibitDeformation;
+        _stickControl.TurnedAround += AllowDeformation;
+        _stickControl.Returned += ProhibitDeformation;
     }
 
     private void OnDisable()
     {
-        _takingCottonCandy.TurnedAround -= AllowDeformation;
-        _takingCottonCandy.Returned -= ProhibitDeformation;
+        _stickControl.TurnedAround -= AllowDeformation;
+        _stickControl.Returned -= ProhibitDeformation;
     }
 
     private void Update()

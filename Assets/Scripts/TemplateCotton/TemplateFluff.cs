@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TemplateFluff : MonoBehaviour
 {
-    private float _valueIncreaseSizeXY = 0.019f;    
+    private float _valueIncreaseSizeXY = 0.019f;
     private float _valueIncreaseSizeZ = 0.01f;
     private float _scale;
     private float _scaleZ;
@@ -16,11 +16,7 @@ public class TemplateFluff : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.TryGetComponent<CottonBlockDisgusting>(out CottonBlockDisgusting cottonBlockDisgusting))
-        {
-            WrapFluffCotton();
-        }
-        if (collision.gameObject.TryGetComponent<CottonBlockPleasant>(out CottonBlockPleasant cottonBlockPleasant))
+        if (collision.gameObject.TryGetComponent<CottonBlock>(out CottonBlock cottonBlock))
         {
             WrapFluffCotton();
         }

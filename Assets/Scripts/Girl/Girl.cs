@@ -4,7 +4,7 @@ using UnityEngine;
 public class Girl : MonoBehaviour
 {
     [SerializeField] private StickMove _stickMove;
-    [SerializeField] private StickPosition _stickPosition;
+    [SerializeField] private StickControl _stickControl;
     [SerializeField] private Animator _animator;
     [SerializeField] private Stick _stick;
     [SerializeField] private GameObject _imageFail;
@@ -37,7 +37,7 @@ public class Girl : MonoBehaviour
     {
         _animator.enabled = true;
         _stickMove.enabled = false;
-        _stickPosition.enabled = false;       
+        _stickControl.enabled = false;       
     }
 
     private void Cry()
